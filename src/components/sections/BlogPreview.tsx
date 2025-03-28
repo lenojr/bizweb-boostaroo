@@ -1,6 +1,6 @@
 
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../ui/card";
-import { Button } from "../ui/button";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../ui/Card";
+import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
 
 type BlogPost = {
