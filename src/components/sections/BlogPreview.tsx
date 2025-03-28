@@ -1,5 +1,5 @@
 
-import { Card } from "../ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../ui/card";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
@@ -67,24 +67,23 @@ const BlogPreview = ({
                   </span>
                 </div>
               </div>
-              <Card.Header className="pt-6">
+              <CardHeader className="pt-6">
                 <div className="text-sm text-muted-foreground mb-2">
                   {post.date}
                 </div>
-                <Card.Title className="text-xl hover:text-primary transition-colors">
+                <CardTitle className="text-xl hover:text-primary transition-colors">
                   <a href={`/blog/${post.slug}`}>
                     {post.title}
                   </a>
-                </Card.Title>
-              </Card.Header>
-              <Card.Content className="flex-grow">
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
                 <p className="text-muted-foreground">
                   {post.summary}
                 </p>
-              </Card.Content>
-              <Card.Footer>
+              </CardContent>
+              <CardFooter>
                 <Button
-                  href={`/blog/${post.slug}`}
                   variant="ghost"
                   className="p-0 h-auto hover:bg-transparent hover:text-primary"
                   asChild
@@ -106,14 +105,14 @@ const BlogPreview = ({
                     </svg>
                   </a>
                 </Button>
-              </Card.Footer>
+              </CardFooter>
             </Card>
           ))}
         </div>
         
         {viewAllLink && (
           <div className="mt-12 text-center">
-            <Button href={viewAllLink} variant="outline" asChild>
+            <Button variant="outline" asChild>
               <a href={viewAllLink}>View all articles</a>
             </Button>
           </div>
