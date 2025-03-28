@@ -1,6 +1,6 @@
 
-import { Card } from "../ui/Card";
-import { Button } from "../ui/Button";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
 type BlogPost = {
@@ -87,21 +87,24 @@ const BlogPreview = ({
                   href={`/blog/${post.slug}`}
                   variant="ghost"
                   className="p-0 h-auto hover:bg-transparent hover:text-primary"
+                  asChild
                 >
-                  Read more
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="ml-1 h-4 w-4"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
+                  <a href={`/blog/${post.slug}`}>
+                    Read more
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="ml-1 h-4 w-4"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
                 </Button>
               </Card.Footer>
             </Card>
@@ -110,8 +113,8 @@ const BlogPreview = ({
         
         {viewAllLink && (
           <div className="mt-12 text-center">
-            <Button href={viewAllLink} variant="outline">
-              View all articles
+            <Button href={viewAllLink} variant="outline" asChild>
+              <a href={viewAllLink}>View all articles</a>
             </Button>
           </div>
         )}
