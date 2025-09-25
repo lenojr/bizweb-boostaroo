@@ -1,8 +1,8 @@
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import Hero from "@/components/sections/Hero";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -57,13 +57,13 @@ const Contact = () => {
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <Card className="animate-fadeIn">
-                  <Card.Header>
-                    <Card.Title className="text-2xl">Send Us a Message</Card.Title>
-                    <Card.Description>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                    <CardDescription>
                       Fill out the form below and we'll get back to you as soon as possible.
-                    </Card.Description>
-                  </Card.Header>
-                  <Card.Content>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
@@ -175,16 +175,16 @@ const Contact = () => {
                         {loading ? "Sending..." : "Send Message"}
                       </Button>
                     </form>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
               </div>
               
               <div className="space-y-6">
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.1s" }}>
-                  <Card.Header>
-                    <Card.Title>Contact Information</Card.Title>
-                  </Card.Header>
-                  <Card.Content className="space-y-4">
+                  <CardHeader>
+                    <CardTitle>Contact Information</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <div>
@@ -217,14 +217,14 @@ const Contact = () => {
                         </p>
                       </div>
                     </div>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
                 
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-                  <Card.Header>
-                    <Card.Title>Business Hours</Card.Title>
-                  </Card.Header>
-                  <Card.Content>
+                  <CardHeader>
+                    <CardTitle>Business Hours</CardTitle>
+                  </CardHeader>
+                  <CardContent>
                     <dl className="space-y-2">
                       <div className="flex justify-between">
                         <dt className="font-medium">Monday - Friday</dt>
@@ -239,14 +239,14 @@ const Contact = () => {
                         <dd className="text-muted-foreground">Closed</dd>
                       </div>
                     </dl>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
                 
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.3s" }}>
-                  <Card.Header>
-                    <Card.Title>Follow Us</Card.Title>
-                  </Card.Header>
-                  <Card.Content>
+                  <CardHeader>
+                    <CardTitle>Follow Us</CardTitle>
+                  </CardHeader>
+                  <CardContent>
                     <div className="flex gap-4">
                       {[
                         { name: "LinkedIn", href: "https://linkedin.com" },
@@ -266,7 +266,7 @@ const Contact = () => {
                         </a>
                       ))}
                     </div>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
               </div>
             </div>

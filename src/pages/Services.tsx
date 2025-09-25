@@ -3,8 +3,8 @@ import { ArrowRight, CircleDollarSign, Clock, FileText, LayoutGrid, MessagesSqua
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import CTA from "@/components/sections/CTA";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
@@ -118,15 +118,15 @@ const Services = () => {
                           {idx + 1}
                         </div>
                         <Card className="bg-white">
-                          <Card.Header>
+                          <CardHeader>
                             <span className="text-primary text-sm font-bold mb-2 md:hidden">STEP {step.number}</span>
-                            <Card.Title className="text-xl">{step.title}</Card.Title>
-                          </Card.Header>
-                          <Card.Content>
+                            <CardTitle className="text-xl">{step.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent>
                             <p className="text-muted-foreground">
                               {step.description}
                             </p>
-                          </Card.Content>
+                          </CardContent>
                         </Card>
                       </div>
                       <div className="md:w-1/2"></div>
@@ -154,8 +154,8 @@ const Services = () => {
                 <p className="text-muted-foreground text-lg mb-8 animate-fadeIn" style={{ animationDelay: "0.3s" }}>
                   Our team of experts works closely with you to understand your business, identify opportunities, and develop strategies that deliver results.
                 </p>
-                <Button href="/contact" className="animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-                  Get a Custom Solution
+                <Button className="animate-fadeIn" style={{ animationDelay: "0.4s" }} asChild>
+                  <a href="/contact">Get a Custom Solution</a>
                 </Button>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
@@ -182,10 +182,10 @@ const Services = () => {
                   },
                 ].map((item, idx) => (
                   <Card key={idx} className="animate-fadeIn" style={{ animationDelay: `${0.3 + (idx * 0.1)}s` }}>
-                    <Card.Header>
-                      <Card.Title>{item.title}</Card.Title>
-                    </Card.Header>
-                    <Card.Content>
+                    <CardHeader>
+                      <CardTitle>{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
                       <p className="text-muted-foreground text-sm mb-4">
                         {item.description}
                       </p>
@@ -193,7 +193,7 @@ const Services = () => {
                         Learn more
                         <ArrowRight className="ml-1 h-4 w-4" />
                       </a>
-                    </Card.Content>
+                    </CardContent>
                   </Card>
                 ))}
               </div>

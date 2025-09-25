@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 
 type CTAProps = {
   title: string;
@@ -58,21 +58,21 @@ const CTA = ({
             <div className="mt-8 md:mt-0 flex flex-col sm:flex-row gap-4 justify-center md:justify-end">
               {primaryAction && (
                 <Button 
-                  href={primaryAction.href}
-                  variant={variant === "highlight" ? "secondary" : "primary"}
+                  variant={variant === "highlight" ? "secondary" : "default"}
                   size="lg"
+                  asChild
                 >
-                  {primaryAction.text}
+                  <a href={primaryAction.href}>{primaryAction.text}</a>
                 </Button>
               )}
               {secondaryAction && (
                 <Button
-                  href={secondaryAction.href}
                   variant={variant === "highlight" ? "ghost" : "outline"}
                   size="lg"
                   className={variant === "highlight" ? "text-white border-white/20 hover:bg-white/10" : ""}
+                  asChild
                 >
-                  {secondaryAction.text}
+                  <a href={secondaryAction.href}>{secondaryAction.text}</a>
                 </Button>
               )}
             </div>

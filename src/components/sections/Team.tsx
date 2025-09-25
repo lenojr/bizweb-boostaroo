@@ -1,5 +1,5 @@
 
-import { Card } from "../ui/Card";
+import { Card, CardHeader, CardContent } from "../ui/card";
 import { cn } from "@/lib/utils";
 
 type TeamMember = {
@@ -62,13 +62,13 @@ const Team = ({
                   className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
-              <Card.Header className="pt-6">
-                <Card.Title className="text-xl">{member.name}</Card.Title>
+              <CardHeader className="pt-6">
+                <h3 className="text-xl font-semibold leading-none tracking-tight">{member.name}</h3>
                 <span className="text-sm text-muted-foreground font-medium">
                   {member.role}
                 </span>
-              </Card.Header>
-              <Card.Content>
+              </CardHeader>
+              <CardContent>
                 <p className="text-muted-foreground">
                   {member.bio}
                 </p>
@@ -119,7 +119,7 @@ const Team = ({
                     )}
                   </div>
                 )}
-              </Card.Content>
+              </CardContent>
             </Card>
           ))}
         </div>

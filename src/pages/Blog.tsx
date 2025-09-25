@@ -1,8 +1,8 @@
 
 import { ArrowRight, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import Hero from "@/components/sections/Hero";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 // Sample blog data
@@ -184,7 +184,7 @@ const Blog = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <Card.Header className="pt-6">
+                        <CardHeader className="pt-6">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-xs font-medium px-3 py-1 rounded-full bg-secondary inline-flex items-center">
                               {post.category}
@@ -193,11 +193,11 @@ const Blog = () => {
                               {post.date}
                             </span>
                           </div>
-                          <Card.Title className="text-2xl hover:text-primary transition-colors">
+                          <CardTitle className="text-2xl hover:text-primary transition-colors">
                             <a href={`/blog/${post.slug}`}>{post.title}</a>
-                          </Card.Title>
-                        </Card.Header>
-                        <Card.Content>
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
                           <p className="text-muted-foreground mb-6">
                             {post.summary}
                           </p>
@@ -216,17 +216,19 @@ const Blog = () => {
                               </p>
                             </div>
                           </div>
-                        </Card.Content>
-                        <Card.Footer>
+                        </CardContent>
+                        <CardFooter>
                           <Button
-                            href={`/blog/${post.slug}`}
                             variant="ghost"
                             className="p-0 h-auto hover:bg-transparent hover:text-primary"
+                            asChild
                           >
-                            Read article
-                            <ArrowRight className="ml-1 h-4 w-4" />
+                            <a href={`/blog/${post.slug}`}>
+                              Read article
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </a>
                           </Button>
-                        </Card.Footer>
+                        </CardFooter>
                       </Card>
                     </div>
                   ))
@@ -284,10 +286,10 @@ const Blog = () => {
               <div className="space-y-8">
                 {/* Search */}
                 <Card className="animate-fadeIn">
-                  <Card.Header>
-                    <Card.Title>Search</Card.Title>
-                  </Card.Header>
-                  <Card.Content>
+                  <CardHeader>
+                    <CardTitle>Search</CardTitle>
+                  </CardHeader>
+                  <CardContent>
                     <form onSubmit={handleSearch} className="relative">
                       <input
                         type="text"
@@ -304,15 +306,15 @@ const Blog = () => {
                         <Search className="h-5 w-5" />
                       </button>
                     </form>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
                 
                 {/* Categories */}
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.1s" }}>
-                  <Card.Header>
-                    <Card.Title>Categories</Card.Title>
-                  </Card.Header>
-                  <Card.Content>
+                  <CardHeader>
+                    <CardTitle>Categories</CardTitle>
+                  </CardHeader>
+                  <CardContent>
                     <ul className="space-y-2">
                       {categories.map((category) => (
                         <li key={category}>
@@ -329,15 +331,15 @@ const Blog = () => {
                         </li>
                       ))}
                     </ul>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
                 
                 {/* Recent Posts */}
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-                  <Card.Header>
-                    <Card.Title>Recent Posts</Card.Title>
-                  </Card.Header>
-                  <Card.Content>
+                  <CardHeader>
+                    <CardTitle>Recent Posts</CardTitle>
+                  </CardHeader>
+                  <CardContent>
                     <ul className="space-y-4">
                       {blogPosts.slice(0, 4).map((post) => (
                         <li key={post.id} className="border-b border-border/50 last:border-0 pb-4 last:pb-0">
@@ -364,18 +366,18 @@ const Blog = () => {
                         </li>
                       ))}
                     </ul>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
                 
                 {/* Newsletter */}
                 <Card className="animate-fadeIn" style={{ animationDelay: "0.3s" }}>
-                  <Card.Header>
-                    <Card.Title>Newsletter</Card.Title>
-                    <Card.Description>
+                  <CardHeader>
+                    <CardTitle>Newsletter</CardTitle>
+                    <CardDescription>
                       Subscribe to our newsletter to get the latest updates.
-                    </Card.Description>
-                  </Card.Header>
-                  <Card.Content>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
                     <form className="space-y-4">
                       <input
                         type="email"
@@ -387,7 +389,7 @@ const Blog = () => {
                         Subscribe
                       </Button>
                     </form>
-                  </Card.Content>
+                  </CardContent>
                 </Card>
               </div>
             </div>

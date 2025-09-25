@@ -1,6 +1,6 @@
 
 import { ReactNode } from "react";
-import { Card } from "../ui/Card";
+import { Card, CardHeader, CardContent } from "../ui/card";
 import { cn } from "@/lib/utils";
 
 type Feature = {
@@ -58,17 +58,17 @@ const Features = ({
               className="animate-fadeIn" 
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
-              <Card.Header>
+              <CardHeader>
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary mb-4">
                   {feature.icon}
                 </div>
-                <Card.Title className="text-xl">{feature.title}</Card.Title>
-              </Card.Header>
-              <Card.Content>
+                <h3 className="text-xl font-semibold leading-none tracking-tight">{feature.title}</h3>
+              </CardHeader>
+              <CardContent>
                 <p className="text-muted-foreground">
                   {feature.description}
                 </p>
-              </Card.Content>
+              </CardContent>
             </Card>
           ))}
         </div>

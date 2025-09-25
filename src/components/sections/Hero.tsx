@@ -1,5 +1,5 @@
 
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
 type HeroProps = {
@@ -71,18 +71,18 @@ const Hero = ({
             }
           )} style={{ animationDelay: "0.3s" }}>
             {primaryAction && (
-              <Button href={primaryAction.href} size="lg">
-                {primaryAction.text}
+              <Button size="lg" asChild>
+                <a href={primaryAction.href}>{primaryAction.text}</a>
               </Button>
             )}
             
             {secondaryAction && (
               <Button
-                href={secondaryAction.href}
                 variant="outline"
                 size="lg"
+                asChild
               >
-                {secondaryAction.text}
+                <a href={secondaryAction.href}>{secondaryAction.text}</a>
               </Button>
             )}
           </div>
